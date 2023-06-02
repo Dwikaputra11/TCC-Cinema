@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,6 +21,12 @@ public class SeatServiceImpl implements SeatService {
     public Page<Seat> findAll(Pageable pageable) {
         return seatRepository.findAll(pageable);
     }
+
+    @Override
+    public List<Seat> findAll() {
+        return seatRepository.findAll();
+    }
+
     @Override
     public Seat findById(int id) {
         var seat = seatRepository.findById(id);

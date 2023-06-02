@@ -23,14 +23,13 @@ public class SeatController {
 
     @GetMapping("/seat")
     public ResponseEntity<Object> findAll(
-            @RequestParam(defaultValue ="0") int page,
-            @RequestParam(defaultValue ="10") int size
+//            @RequestParam(defaultValue ="0") int page,
+//            @RequestParam(defaultValue ="10") int size
     ){
-        Page<Seat> seatList;
-        Pageable pageable = PageRequest.of(page, size);
-        seatList = seatService.findAll(pageable);
+//        Page<Seat> seatList;
+//        Pageable pageable = PageRequest.of(page, size);
 
-        return ResponseHandler.generatePagingResponse(SUCCESS_RETRIEVE_MSG, HttpStatus.OK,seatList);
+        return ResponseHandler.generateResponse(SUCCESS_RETRIEVE_MSG, HttpStatus.OK,seatService.findAll());
     }
     @GetMapping("/seat/{id}")
     public ResponseEntity<Object> findAll(@PathVariable("id") int id){
