@@ -11,7 +11,7 @@ steps:
     args: ['push', 'us-docker.pkg.dev/$PROJECT_ID/gcr.io/springbootgcp:$COMMIT_SHA']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args: ['run', 'deploy', 'springbootgcpcr', '--image',  "us-docker.pkg.dev/$PROJECT_ID/gcr.io/springbootgcp:$COMMIT_SHA" , '--allow-unauthenticated','--port=8080','--region', 'asia-southeast1']
+    args: ['run', 'deploy', 'gcpcinematicket', '--image',  "us-docker.pkg.dev/$PROJECT_ID/gcr.io/springbootgcp:$COMMIT_SHA" , '--allow-unauthenticated','--port=8080','--region', 'asia-southeast1']
 timeout: "1600s"
 options:
   logging: CLOUD_LOGGING_ONLY

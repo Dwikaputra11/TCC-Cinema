@@ -65,9 +65,7 @@ public class ScheduleServiceImpl implements ScheduleService {
         var film = filmRepository.findById(request.getFilmId()).orElseThrow(() -> new RuntimeException("No studio or film found"));;
 
 
-        var schedule = modelMapper.map(request, Schedule.class);
-        schedule.setFilm(film);
-        schedule.setStudio(studio);
+        var schedule = request.toSchedule(studio, film);
 
         var result = scheduleRepository.save(schedule);
 
