@@ -39,6 +39,7 @@ public class DatabaseSeeder {
             if(counterSeat%14 == 0){
                 counterSeat = 1;
                 studioId++;
+                counterSeat++;
             }else{
                 counterSeat++;
                 i++;
