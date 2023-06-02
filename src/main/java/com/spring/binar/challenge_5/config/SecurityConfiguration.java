@@ -37,7 +37,7 @@ public class SecurityConfiguration {
                 .cors()
                 .and()
                 .authorizeHttpRequests(request ->
-                        request.requestMatchers("/swagger-ui/**","/v3/api-docs/**").permitAll()
+                        request.requestMatchers("/swagger-ui/**","/v3/api-docs/**","/swagger-resources/**", "/v2/api-docs","/webjars/**").permitAll()
                                 .requestMatchers("/api/auth/**", "/error","/web-public/auth/**").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/api/schedule/**","/api/payment/**", "/api/film/**", "/api/user/*").authenticated()
                                 .requestMatchers(HttpMethod.POST, "/api/payment").authenticated()
