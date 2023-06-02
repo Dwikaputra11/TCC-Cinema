@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Bean;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@OpenAPIDefinition
-@EnableSwagger2
 public class Challenge5Application {
 
 	@Bean
