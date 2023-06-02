@@ -19,30 +19,30 @@ public class DatabaseSeeder {
     private final JdbcTemplate jdbcTemplate;
 
 
-    @EventListener
+//    @EventListener
     public void seed(ContextRefreshedEvent event){
         seedSeatTable();
     }
 
     private void seedSeatTable() {
-        int studioId = 1;
-        byte counterSeat = 1;
-        int i = 1;
-        char[] charSeat = {'A', 'B'};
-        Seat seat = new Seat();
-        while(i <= 68){
-            seat.setNumber(counterSeat);
-            if(counterSeat > 7) seat.setRow(charSeat[1]);
-            else seat.setRow(charSeat[0]);
-            seat.setStudio(studioRepository.findById(studioId).orElse(null));
-            repository.save(seat);
-            if(counterSeat%14 == 0){
-                counterSeat = 1;
-                studioId++;
-            }else{
-                counterSeat++;
-            }
-            i++;
-        }
+//        int studioId = 1;
+//        byte counterSeat = 1;
+//        int i = 1;
+//        char[] charSeat = {'A', 'B'};
+//        Seat seat = new Seat();
+//        while(i <= 68){
+//            seat.setNumber(counterSeat);
+//            if(counterSeat > 7) seat.setRow(charSeat[1]);
+//            else seat.setRow(charSeat[0]);
+//            seat.setStudio(studioRepository.findById(studioId).orElse(null));
+//            repository.save(seat);
+//            if(counterSeat%14 == 0){
+//                counterSeat = 1;
+//                studioId++;
+//            }else{
+//                counterSeat++;
+//            }
+//            i++;
+//        }
     }
 }
