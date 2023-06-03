@@ -2,6 +2,7 @@ package com.spring.binar.challenge_5.service.implementation;
 
 import com.spring.binar.challenge_5.dto.CostumerRequestDTO;
 import com.spring.binar.challenge_5.dto.CostumerResponseDto;
+import com.spring.binar.challenge_5.dto.CostumerUpdateRequestDTO;
 import com.spring.binar.challenge_5.models.Costumer;
 import com.spring.binar.challenge_5.repos.CostumerRepository;
 import com.spring.binar.challenge_5.repos.UserRepository;
@@ -86,15 +87,17 @@ public class CostumerServiceImpl implements CostumerService {
     }
 
     @Override
-    public CostumerResponseDto update(Costumer updatedCostumer) {
+    public CostumerResponseDto update(CostumerUpdateRequestDTO updatedCostumer) {
         var result = costumerRepository.findById(updatedCostumer.getCostumerId());
 
         if(result.isEmpty())
             throw new RuntimeException("Data costumer id: " + updatedCostumer.getCostumerId() + " is not exist.");
-
+        var user = userRepository.findById(updatedCostumer.getUserId()).orElseThrow();
         var costumer = result.get();
         costumer.setEmail(updatedCostumer.getEmail());
         costumer.setFirstName(updatedCostumer.getFirstName());
+        costumer.setUserProfile(user);
+        costumer.setPhotoUrl(updatedCostumer.getPhotoUrl());
         return costumerRepository.save(costumer).convertToCostumerDto();
     }
 

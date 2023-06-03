@@ -1,6 +1,7 @@
 package com.spring.binar.challenge_5.controller.rest;
 
 import com.spring.binar.challenge_5.dto.CostumerRequestDTO;
+import com.spring.binar.challenge_5.dto.CostumerUpdateRequestDTO;
 import com.spring.binar.challenge_5.models.Costumer;
 import com.spring.binar.challenge_5.service.CostumerService;
 import com.spring.binar.challenge_5.utils.ResponseHandler;
@@ -62,7 +63,7 @@ public class CostumerController {
     }
 
     @PutMapping("/costumer")
-    public ResponseEntity<Object> update(@RequestBody Costumer costumer ) {
+    public ResponseEntity<Object> update(@RequestBody CostumerUpdateRequestDTO costumer ) {
         costumerService.update(costumer);
         return ResponseHandler.generateResponse(SUCCESS_EDIT_MSG, HttpStatus.OK, costumer);
     }

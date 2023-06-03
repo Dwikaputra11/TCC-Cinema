@@ -2,6 +2,7 @@ package com.spring.binar.challenge_5.service;
 
 import com.spring.binar.challenge_5.dto.CostumerRequestDTO;
 import com.spring.binar.challenge_5.dto.CostumerResponseDto;
+import com.spring.binar.challenge_5.dto.CostumerUpdateRequestDTO;
 import com.spring.binar.challenge_5.models.Costumer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,7 +23,7 @@ public interface CostumerService {
 
     CostumerResponseDto save(MultipartFile file, Integer costumerId);
 
-    CostumerResponseDto update(Costumer updatedCostumer);
+    CostumerResponseDto update(CostumerUpdateRequestDTO updatedCostumer);
 
     void delete(int id);
 }
