@@ -10,19 +10,19 @@ import org.springframework.context.event.EventListener;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-@Component
-@Slf4j
-@RequiredArgsConstructor
+//@Component
+//@Slf4j
+//@RequiredArgsConstructor
 public class DatabaseSeeder {
-    private final SeatRepository repository;
-    private final StudioRepository studioRepository;
-    private final JdbcTemplate jdbcTemplate;
+//    private final SeatRepository repository;
+//    private final StudioRepository studioRepository;
+//    private final JdbcTemplate jdbcTemplate;
 
 
 //    @EventListener
-    public void seed(ContextRefreshedEvent event){
-        seedSeatTable();
-    }
+//    public void seed(ContextRefreshedEvent event){
+//        seedSeatTable();
+//    }
 
     private void seedSeatTable() {
 //        int studioId = 1;
